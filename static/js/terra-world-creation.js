@@ -8,7 +8,7 @@ terra.registerCreature({
     color: [120, 0, 240],
     sustainability: 6,
     reproduceLv: 1
-    process: function () {coords, creature}[]
+    //process: function {G}
   });
 
  // create a simple plant creature
@@ -27,4 +27,3 @@ ex1.grid = ex1.makeGridWithDistribution([['secondCreature', 5], ['simplePlant', 
 
 //animate enviromnent 
 ex1.animate(300);
-console.log()
