@@ -1,3 +1,5 @@
+
+Research and references: 
 https://www.notion.so/Life-in-a-Browser-9060924b7cf9458287ee52f7a78d932a
 
 # Life in a Browser 
