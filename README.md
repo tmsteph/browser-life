@@ -19,9 +19,7 @@ https://www.notion.so/Life-in-a-Browser-9060924b7cf9458287ee52f7a78d932a
 
 1. give creature "id" method that gives each creature created a unique id 
 2. Write creature method that sends x, y, id, and actions of each creature per iteration to Data Base for recording.  
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/97e14cca-0955-41eb-9b5a-b51fec173a52/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/97e14cca-0955-41eb-9b5a-b51fec173a52/Untitled.png)
-
+Look into "Process" method
 ### Analyze and visualize Data:
 
 Run summary statistics of creature types, counts, and locations of creatures per iteration using python to manipulate the data from the mongo database
