@@ -13,7 +13,7 @@ https://www.notion.so/Life-in-a-Browser-9060924b7cf9458287ee52f7a78d932a
 
 4. Create a flask app that auto update critter statistics "live" in real time of the simulation. Show the Critters in the terra.js viewport "living" in real time as the stats about them update in the same page. 
 
-5. include buttons and sliders for changing simulation parameters as well as graphical viewpoints.  
+5. Include interactive buttons and sliders for changing simulation parameters as well as graphical viewpoints.  
 
 ## Detailed Breakdown
 
