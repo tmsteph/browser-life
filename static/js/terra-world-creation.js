@@ -1,3 +1,5 @@
+// assign array here
+
 terra.registerCreature({
     type: 'firstCreature'
   });
@@ -8,8 +10,10 @@ terra.registerCreature({
     color: [120, 0, 240],
     sustainability: 6,
     reproduceLv: 1
+    //console.log(process () )
     //process: function {G}
-  });
+  },function() {this.id = array.length + 1; 
+                array.append.this});// 
 
  // create a simple plant creature
 terra.registerCreature({
@@ -24,6 +28,9 @@ terra.registerCreature({
 // initialize our environment
 var ex1 = new terra.Terrarium(50, 50, {id: 'ex1'});
 ex1.grid = ex1.makeGridWithDistribution([['secondCreature', 5], ['simplePlant', 95]]);
+
+
+// export all the creatures = 
 
 //animate enviromnent 
 ex1.animate(300);
