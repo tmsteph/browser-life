@@ -1,4 +1,14 @@
-// assign array here
+
+
+// create new class  
+
+// baseCreature.prototype.id = function (neighbors) {
+//   var creature = this;
+// // give id
+//   var id = 
+  
+// } 
+
 
 terra.registerCreature({
     type: 'firstCreature'
@@ -8,12 +18,21 @@ terra.registerCreature({
   terra.registerCreature({
     type: 'secondCreature',
     color: [120, 0, 240],
-    sustainability: 6,
+    sustainability: 6, // amount of food sources that need to be around it
     reproduceLv: 1
-    //console.log(process () )
     //process: function {G}
-  },function() {this.id = array.length + 1; 
-                array.append.this});// 
+  }, 
+  function() {
+    var ID = function () {
+      // Math.random should be unique because of its seeding algorithm.
+      // Convert it to base 36 (numbers + letters), and grab the first 9 characters
+      // after the decimal.
+      return '_' + Math.random().toString(36).substr(2, 9);
+    };
+  
+  this.id = ID()
+  console.log(this.id) // printing out ID to console
+  });
 
  // create a simple plant creature
 terra.registerCreature({
@@ -26,11 +45,14 @@ terra.registerCreature({
 });
 
 // initialize our environment
-var ex1 = new terra.Terrarium(50, 50, {id: 'ex1'});
+var ex1 = new terra.Terrarium(25, 25, {id: 'ex1'});
 ex1.grid = ex1.makeGridWithDistribution([['secondCreature', 5], ['simplePlant', 95]]);
 
+//Create javascript object. var = [] Key to each object is name of individual creature
 
-// export all the creatures = 
+// inside of process function spew out statistics into that object. 
+
+// have different process that will grab information 
 
 //animate enviromnent 
 ex1.animate(300);
