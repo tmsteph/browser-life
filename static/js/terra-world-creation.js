@@ -19,8 +19,10 @@ terra.registerCreature({
     type: 'secondCreature',
     color: [120, 0, 240],
     sustainability: 6, // amount of food sources that need to be around it
-    reproduceLv: 1
-    //process: function {G}
+    reproduceLv: 1,
+    process: function (x, y) {
+      console.log(x, y)
+    }
   }, 
   function() {
     var ID = function () {
@@ -31,7 +33,10 @@ terra.registerCreature({
     };
   
   this.id = ID()
+
   console.log(this.id) // printing out ID to console
+
+  
   });
 
  // create a simple plant creature
