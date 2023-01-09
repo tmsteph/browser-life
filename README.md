@@ -19,13 +19,12 @@ https://www.notion.so/Life-in-a-Browser-9060924b7cf9458287ee52f7a78d932a
 
 ### Extract data:
 
-1. give creature "id" method that gives each creature created a unique id 
-2. Write creature method that sends x, y, id, and actions of each creature per iteration to Data Base for recording.  
-Look into "Process" method
+1. Give creature "id" method that gives each creature created a unique id 
+2. Write creature method that sends coordinates, x, y, id, and actions of each creature per iteration to Data Base for recording.  
 
 ### Analyze and visualize Data:
 
-Run summary statistics of creature types, counts, and locations of creatures per iteration using python to manipulate the data from the mongo database
+Run summary statistics of creature types, counts, and locations per iteration using python to manipulate the data from the mongo database
 
 ### Visualize
 
