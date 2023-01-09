@@ -28,4 +28,4 @@ Run summary statistics of creature types, counts, and locations per iteration us
 
 ### Visualize
 
-visualize in d3 with some interactive views.
+Visualize in d3 with some interactive views.
