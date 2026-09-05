@@ -1,31 +1,33 @@
+# Browser Life
 
-Research and references: 
-https://www.notion.so/Life-in-a-Browser-9060924b7cf9458287ee52f7a78d932a
+A tiny evolving ecosystem that lives entirely in the browser.
 
-# Life in a Browser 
+The project began as a Terra.js experiment: create critters, track their IDs and behavior, record their lives, and eventually visualize the resulting data. The original prototype is preserved in `static/js/terra-world-creation.js`.
 
-1. Use terra.js to create "critters" and have them interact with a virtual environment. 
-[https://rileyjshaw.com/terra/](https://rileyjshaw.com/terra/)
+## The revived experiment
 
-2. Keep track of their actions in a Mongo DB to create a database for analysis (Keep track of population of critters, plants, how much they eat, etc).
+The current version is dependency-free JavaScript + Canvas. Each creature inherits genes for:
 
-3. Graph the info about the critters onto a D3 interactive graph. 
+- **speed** — movement versus metabolic cost
+- **sense** — how far it can detect food
+- **size** — eating radius versus metabolic cost
+- **color** — a visible family trait
 
-4. Create a flask app that auto update critter statistics "live" in real time of the simulation. Show the Critters in the terra.js viewport "living" in real time as the stats about them update in the same page. 
+Creatures spend energy to live, seek food, reproduce when they have enough energy, pass mutated genes to their children, and eventually die. Over enough generations, the world selects which combinations survive.
 
-5. Include interactive buttons and sliders for changing simulation parameters as well as graphical viewpoints.  
+### Play with evolution
 
-## Detailed Breakdown
+- Click/tap the world to create a burst of food.
+- Change **Food rain** to make the environment abundant or harsh.
+- Change **Mutation** to control how quickly descendants diverge.
+- Change **Time** to accelerate the experiment.
+- Hit **Inject chaos** to introduce a new gene pool.
+- Hit **New universe** to start over.
 
-### Extract data:
+## Why this exists
 
-1. Give creature "id" method that gives each creature created a unique id 
-2. Write creature method that sends coordinates, x, y, id, and actions of each creature per iteration to Data Base for recording.  
+The original idea was bigger than a visual toy: treat artificial creatures as data-producing organisms, record their histories, and study emergent behavior. A natural next step is to add lineage/history recording and persistent experiments without losing the simple browser-first nature of the project.
 
-### Analyze and visualize Data:
+## Original research direction
 
-Run summary statistics of creature types, counts, and locations per iteration using python to manipulate the data from the mongo database
-
-### Visualize
-
-Visualize in d3 with some interactive views.
+The 2021 prototype planned to combine Terra.js, MongoDB, Python analysis, D3 visualizations, and live controls. The new version deliberately starts smaller: first make the world interesting and alive, then make its history observable.
