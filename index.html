@@ -1,30 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <!--Importing neccesary external Libraries and scripts blow.  
-        ---Note that "terra-world-creation.js" is included where it needs to be 
-        in the body to create the terrerium -->
-    <script src="//cdn.jsdelivr.net/terra/latest/mainfile"></script>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07100d">
+  <meta name="description" content="A tiny evolving ecosystem that lives entirely in your browser.">
+  <title>Browser Life — an evolving world</title>
+  <link rel="stylesheet" href="static/style.css">
 </head>
-
 <body>
-    <h1>Testing testing.. We've got life! </h1>
-    
-    <!-- Importing file to create Terrerium and creatures Below-->
-    <script script type="text/javascript" src="/static/js/terra-world-creation.js"></script>
-   <p><strong>Runs for a few hundred steps and then pauses. Refresh to start again!</p></strong>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Browser Life · tmsteph</p>
+        <h1>We've got life.</h1>
+        <p class="intro">
+          Every moving spark is a creature with inherited genes for speed, sight, size, and color.
+          Food creates energy. Energy creates children. Children mutate. The world decides what survives.
+        </p>
+      </div>
+      <p class="hero-note">Tap or click the world to make a burst of food and change its future.</p>
+    </header>
 
-   
+    <section class="world-card" aria-label="Browser Life simulation">
+      <canvas id="world" aria-label="Animated evolving ecosystem"></canvas>
+      <div class="stats" aria-live="polite">
+        <div class="stat"><strong id="population">0</strong><span>creatures</span></div>
+        <div class="stat"><strong id="food-count">0</strong><span>food</span></div>
+        <div class="stat"><strong id="generation">1</strong><span>highest generation</span></div>
+        <div class="stat"><strong id="avg-speed">0</strong><span>average speed</span></div>
+        <div class="stat"><strong id="births">0</strong><span>births</span></div>
+      </div>
+    </section>
 
-   
+    <section class="control-panel" aria-label="World controls">
+      <div class="controls">
+        <div class="control">
+          <label for="food-rate">Food rain</label>
+          <input id="food-rate" type="range" min="1" max="10" step="1" value="4">
+          <output id="food-rate-value">4</output>
+        </div>
+        <div class="control">
+          <label for="mutation-rate">Mutation</label>
+          <input id="mutation-rate" type="range" min="0.02" max="0.35" step="0.01" value="0.12">
+          <output id="mutation-rate-value">12%</output>
+        </div>
+        <div class="control">
+          <label for="time-scale">Time</label>
+          <input id="time-scale" type="range" min="0.25" max="4" step="0.25" value="1">
+          <output id="time-scale-value">1×</output>
+        </div>
+      </div>
 
+      <div class="actions">
+        <button id="pause" type="button" aria-pressed="false">Pause</button>
+        <button id="chaos" class="primary" type="button">Inject chaos</button>
+        <button id="reset" type="button">New universe</button>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      No server. No database. No framework. Just JavaScript, natural selection, and a canvas.
+      The original Terra.js experiment is still preserved in the repository.
+    </p>
+  </main>
+
+  <script src="static/js/life.js"></script>
+  <script>
+    const controls = [
+      ['food-rate', 'food-rate-value', (value) => value],
+      ['mutation-rate', 'mutation-rate-value', (value) => `${Math.round(value * 100)}%`],
+      ['time-scale', 'time-scale-value', (value) => `${value}×`]
+    ];
+
+    for (const [inputId, outputId, format] of controls) {
+      const input = document.getElementById(inputId);
+      const output = document.getElementById(outputId);
+      const sync = () => { output.value = format(Number(input.value)); };
+      input.addEventListener('input', sync);
+      sync();
+    }
+  </script>
 </body>
-
 </html>
